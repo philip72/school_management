@@ -1,6 +1,8 @@
 # school_management
 
 A new Flutter project.
+this project involves students, parents and teachers .
+
 
 ## Getting Started
 
