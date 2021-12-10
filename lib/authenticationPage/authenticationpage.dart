@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:school_management/authenticationPage/flutterfiles.dart';
+import 'flutterfiles.dart';
 class Authentication extends StatefulWidget {
   const Authentication({Key? key}) : super(key: key);
 
@@ -56,7 +57,13 @@ class _AuthenticationState extends State<Authentication> {
                borderRadius: BorderRadius.circular(15.0),
                color: Colors.white,
              ),
-             child: MaterialButton(onPressed: (){},child: Text(
+             child: MaterialButton(onPressed: ()async{
+               bool shouldNavigate= await register(emailField.text, passwordField.text);
+               if(shouldNavigate){
+
+               }
+               },
+               child: Text(
                "Register"
              ),),
            ),
@@ -67,14 +74,17 @@ class _AuthenticationState extends State<Authentication> {
                borderRadius: BorderRadius.circular(15.0),
                color: Colors.white,
              ),
-             child: MaterialButton(onPressed: (){},child: Text(
+             child: MaterialButton(onPressed: ()async{
+               bool shouldNavigate=
+               await signIn(emailField.text, passwordField.text);
+               if(shouldNavigate){
+
+               }
+             },child: Text(
                  "Login"
              ),),
            ),
-
-
          ]
-
         ),
       ),
     );
